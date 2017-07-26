@@ -114,3 +114,19 @@ make imagepush
 [httpbin-repo]: https://github.com/kennethreitz/httpbin
 [ahmet]: https://github.com/ahmetb/go-httpbin
 [docker-hub]: https://hub.docker.com/r/mccutchen/go-httpbin/
+
+
+## Compilation
+
+Build static binary:
+
+```
+go build -ldflags "-linkmode external -extldflags -static" .
+```
+
+Cross compilation example:
+
+```
+env GOOS=darwin GOARCH=amd64 go build
+```
+
